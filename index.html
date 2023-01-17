@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Math Project</title>
+<link rel="stylesheet" href="./bootstrap.min.css">
+<body>
+
+
+
+	<div class="container" style="text-align: center">
+		<h1 > Math Project</h1>
+	</div>
+	<br>
+	<div class="container" style="text-align: center">
+		<div class="panel" style="display: inline-block">
+			<img src="img.jpg">
+		</div>
+	</div>
+
+	<div class="container" style="text-align: center; margin-top: 50px">
+
+
+
+
+
+</body>
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery.image-jigsaw.js"></script>
+<script>
+$(document).ready(function() {
+	$(".panel").jigsaw({freq: 2000, x: 6, y:5, margin: 2, callbacks: [{event: 'mouseover', func: function() {
+		$(this).data('last_bg', $(this).css('background-image'));
+		$(this).css('background-image', 'none');
+	}}, {event: 'mouseout', func: function() {
+		$(this).css('background-image', $(this).data('last_bg'));
+	}}]});
+});
+</script>
+</head>
+</html>
